@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th= "http://thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto Hospital Consulta</title>
+</head>
+<body>
+
+<h2>Cadastro de Medico</h2>
+<a href="/">Home</a> | <a href="/pacientes">Listar Paciente</a> | <a href="/pacientes/novoPaciente">Cadastrar Paciente</a>
+<hr>
+<form id="CadastroPaciente" action="#" th:action="@{/pacientes/salvar}" th:object="${paciente}" method="post">
+    <label>Nome</label>
+    <input type="text" th:field="*{nome}" /><br>
+    <label>CPF</label>
+    <input type="text" th:field="*{cpf}" /><br>
+
+    <button type="submit">Salvar</button>
+</form>
+
+</body>
+</html>

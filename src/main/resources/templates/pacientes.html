@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto Hospital Consulta</title>
+</head>
+<body>
+
+<h2>Lista de Paciente</h2>
+<a href="/">Home</a> | <a href="/pacientes">Listar Paciente</a> | <a href="/pacientes/novoPaciente">Cadastrar Paciente</a>
+<hr>
+<table border="2px">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th colspan="2">Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="paciente : ${pacientes}">
+        <td><span th:text="${paciente.id}"></span></td>
+        <td><span th:text="${paciente.nome}"></span></td>
+        <td><span th:text="${paciente.cpf}"></span></td>
+
+        <!-- <td><a th:href="@{/candidatos/editar/{codigo}(codigo=${candidato.id})}">Editar</td>
+         <td><a th:href="@{/candidatos/excluir/{codigo}(codigo=${candidato.id})}">Excluir</td>-->
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

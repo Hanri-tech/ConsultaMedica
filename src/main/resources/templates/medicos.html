@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto Hospital Consulta</title>
+</head>
+<body>
+
+<h2>Lista de Medicos</h2>
+<a href="/">Home</a> | <a href="/medicos">Listar Medicos</a> | <a href="/medicos/novoMedico">Cadastrar Medico</a>
+<hr>
+<table border="2px">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>ID Especialidade</th>
+        <th>Especialidade</th>
+        <th>CRM</th>
+        <th>CPF</th>
+        <th colspan="2">Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="medico : ${medicos}">
+        <td><span th:text="${medico.id}"></span></td>
+        <td><span th:text="${medico.nome}"></span></td>
+        <td><span th:text="${medico.especialidade.id}"></span></td>
+        <td><span th:text="${medico.especialidade.descricao}"></span></td>
+        <td><span th:text="${medico.crm}"></span></td>
+        <td><span th:text="${medico.cpf}"></span></td>
+
+
+        <!-- <td><a th:href="@{/eleitores/editar/{codigo}(codigo=${eleitor.id})}">Editar</td>
+         <td><a th:href="@{/eleitores/excluir/{codigo}(codigo=${eleitor.id})}">Excluir</td>
+         <td><a th:href="@{/eleitores/votar/{codigo}(codigo=${eleitor.id})}">Votar</td>-->
+
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
